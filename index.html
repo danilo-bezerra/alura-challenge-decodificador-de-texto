@@ -7,13 +7,14 @@
     <title>Challenge | Codificador</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+<body class="dark">
     <header class="header">
         <img class="logo" src="assets/images/logo-alura.png">
+        <button class="btn-theme"><img src="assets/images/moon-color.png" alt="orange sun icon"></button>
     </header>
     <section class="container">
         <form class="form">
-            <textarea class="textarea" placeholder="Digite seu texto"></textarea>
+            <textarea class="textarea" placeholder="Digite seu texto..."></textarea>
             <label class="label">Apenas letras minusculas e minusculas sem acento</label>
             <div class="form__buttons">
                 <button id="btn-encrypt" class="btn btn-primary" type="button">Criptografar</button>
@@ -32,7 +33,9 @@
             </div>
         </div>
     </section>
-
+    <footer class="footer">
+        <p class="footer__text">Alura Challenge - Oracle Next Education | Desenvolvido por<a href=""><strong>Danilo Bezerra</strong></a></p>
+    </footer>
     <script src="scripts/main.js" type="module"></script>
 </body>
 </html>

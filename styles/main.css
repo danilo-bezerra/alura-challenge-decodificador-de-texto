@@ -6,6 +6,7 @@
     --gray-300: #868e96;
     --gray-400: #495057;
     --gray-500: #343A40;
+    --gray-600: #252525;
 
     --dark-blue-100: #609ED4;
     --dark-blue-200: #356EA9;
@@ -38,18 +39,28 @@ body {
     padding-top: 0;
 }
 
+body.dark {
+    background-color: var(--gray-600);
+}
+
 .header {
     height: 5rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     max-width: 940px;
     margin: 0 auto;
 }
 
+.dark .header .logo {
+    filter: brightness(0) invert(1);
+}
+
 .container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2.5rem;    height: calc(100% - 5rem);
+    grid-template-columns: 2fr 1.1fr;
+    gap: 2.5rem;    
+    height: calc(100% - 5rem);
     width: 100%;
     max-width: 940px;    
     margin: 0 auto;
@@ -66,6 +77,11 @@ body {
     cursor: pointer;
 }
 
+.dark .btn {
+    color: var(--light-blue-100);
+    border-color:  var(--light-blue-100);
+}
+
 .btn.btn-primary {
     color: var(--light-blue-100);
     background-color: var(--dark-blue-300);
@@ -75,8 +91,19 @@ body {
     background-color: var(--light-blue-200);
 }
 
+.dark .btn:hover {
+    background-color: var( --gray-400);
+}
+
 .btn.btn-primary:hover {
     background-color: var(--dark-blue-400)
+}
+
+
+
+.btn-theme {
+    background-color: transparent;
+    cursor: pointer;
 }
 
 
@@ -105,9 +132,21 @@ body {
     color: var(--dark-blue-300);
 }
 
+.dark .form .textarea {
+    color: var(--light-blue-100);
+}
+
+.dark .form .textarea::placeholder {
+    color: var(--light-blue-100);
+}
+
 .form .label {
     font-size: .75rem;
     color: var(--gray-400);
+}
+
+.dark .form .label {
+    color: var(--gray-200);
 }
 
 .form .form__buttons {
@@ -179,6 +218,23 @@ body {
     color: var(--gray-400);
     word-break: break-all;
 }
+
+.dark .result-container {
+    background-color: var(--gray-500);
+}
+
+.dark .result-container .no-result .no-result__title {
+    color: var(--light-blue-300);
+}
+
+.dark .result-container .no-result .no-result__text {
+    color: var(--light-blue-400);
+}
+
+.dark .result-container .result .result__text {
+    color: var(--gray-100);
+}
+
 
 /* RESULT END */
 

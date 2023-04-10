@@ -1,5 +1,6 @@
 import { decrypt } from "./decrypt.js"
 import { encrypt } from "./encrypt.js"
+import "./toggle-theme.js"
 
 const btnEncrypt = document.querySelector("#btn-encrypt")
 const btnDecrypt = document.querySelector("#btn-decrypt")
@@ -54,10 +55,12 @@ textInput.addEventListener('input', () => {
 })
 
 btnEncrypt.addEventListener('click', () => {
-    hideNoResultContainer()
-    showResultContainer()
-    setResult(textInput.value)
-    setTextInputValue("")
+    if (textInput.value.trim()) {
+        hideNoResultContainer()
+        showResultContainer()
+        setResult(textInput.value)
+        setTextInputValue("")
+    }
 })
 
 btnDecrypt.addEventListener('click', () => {
