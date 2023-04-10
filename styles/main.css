@@ -7,12 +7,15 @@
     --gray-400: #495057;
     --gray-500: #343A40;
     --gray-600: #252525;
+    --gray-700: #202020;
+    --gray-800: #0f0f0f;
 
     --dark-blue-100: #609ED4;
     --dark-blue-200: #356EA9;
     --dark-blue-300: #0A3871;
     --dark-blue-400: #072B61;
     --dark-blue-500: #052051;
+    --dark-blue-600: #051d49;
 
     --light-blue-100: #F3F5FC;
     --light-blue-200: #EFF1FA;
@@ -29,30 +32,61 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body {
     height: 100vh;
     min-height: 100vh;
     background-color: var(--light-blue-100);
-    padding: 0 2.5rem;
+    padding: 0 ;
     padding-top: 0;
+    
 }
 
 body.dark {
     background-color: var(--gray-600);
 }
 
-.header {
-    height: 5rem;
+::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--dark-blue-300);
+  }
+  
+  ::-webkit-scrollbar-track {
+   
+  }
+  
+  ::-webkit-scrollbar-track:hover {
+    background-color: rgba(0,0,0,0.1);
+  }
+
+
+.header {   
+    padding: 0 2rem;
+    background-color: var(--dark-blue-300);
+    box-shadow: 5px 5px 35px  #000a;
+}
+
+.header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 5rem;
     max-width: 940px;
     margin: 0 auto;
 }
 
-.dark .header .logo {
+.header .logo {
     filter: brightness(0) invert(1);
 }
 
@@ -64,7 +98,7 @@ body.dark {
     width: 100%;
     max-width: 940px;    
     margin: 0 auto;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 .btn {
@@ -75,16 +109,19 @@ body.dark {
     padding: 1.5rem;
     transition: .25s all;
     cursor: pointer;
+    box-shadow: 5px 5px 15px #0002;
 }
 
 .dark .btn {
     color: var(--light-blue-100);
     border-color:  var(--light-blue-100);
+    box-shadow: 5px 5px 15px #0008;
 }
 
 .btn.btn-primary {
     color: var(--light-blue-100);
     background-color: var(--dark-blue-300);
+    box-shadow: 5px 5px 15px #0005;
 }
 
 .btn:hover {
@@ -164,12 +201,15 @@ body.dark {
 /* RESULT START */
 
 .result-container {
+    position: relative;
     width: 100%;
     max-width: 400px;
     background-color: white;
     padding: 2rem;
     border-radius: 2rem;
     box-shadow: 5px 5px 15px #0002;
+    overflow-y: hidden;
+   
 }
 
 .result-container .no-result{
@@ -217,6 +257,14 @@ body.dark {
     font-size: 1.5rem;
     color: var(--gray-400);
     word-break: break-all;
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+.result #btn-copy {
+    position: sticky;
+    bottom: 0;
+   
 }
 
 .dark .result-container {
@@ -235,6 +283,37 @@ body.dark {
     color: var(--gray-100);
 }
 
+.footer {
+    padding: 2.5rem;
+    background-color: var(--dark-blue-300);
+    box-shadow: -5px 5px 35px  #000a;
+}
+
+
+
+.footer .footer__text {
+    font-size: .8rem;
+    max-width: 940px;
+    text-align: center;
+    margin: 0 auto;
+    color: var(--light-blue-100);
+    line-height: 1.5;
+}
+
+.footer .footer__text a {
+    font-size: .8rem;
+    color: var(--dark-blue-300);
+    text-decoration: none;
+    color: var(--light-blue-100);
+}
+
+.footer .footer__text a:hover {
+    text-decoration: underline;
+}
+
+.footer .footer__text strong {
+    font-size: .8rem;
+}
 
 /* RESULT END */
 
@@ -243,6 +322,7 @@ body.dark {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 1rem;
+        padding: 2.5rem;
     }
 }
 
@@ -250,10 +330,11 @@ body.dark {
 
 
     .container {
-        display: block;
+        display: flex;
         flex-direction: column;
-        justify-content: stretch;
+        height: fit-content;
         min-height: 100vh;
+        padding: 1.5rem;
         gap: 1rem;
         margin-top: 1.5rem;
        
@@ -262,9 +343,9 @@ body.dark {
     /* FORM START */
 
     .form {
-        min-height: 75%;
         padding: 0;
         margin-bottom: 2rem;
+        min-height: 60vh;
     }
 
 
@@ -293,6 +374,10 @@ body.dark {
 }
 
 @media (max-width: 375px) {
+    .form .textarea {
+        min-height: 30vh;
+    }
+
     .form .form__buttons {
         flex-direction: column;
     }

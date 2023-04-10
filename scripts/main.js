@@ -60,6 +60,8 @@ btnEncrypt.addEventListener('click', () => {
         showResultContainer()
         setResult(textInput.value)
         setTextInputValue("")
+
+        document.getElementById("result-container").scrollIntoView()
     }
 })
 
