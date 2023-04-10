@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge | Codificador</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <section class="container">
+        <form class="form">
+            <textarea class="textarea" placeholder="Digite seu texto"></textarea>
+            <label class="label">Apenas letras minusculas e minusculas sem acento</label>
+            <div class="form__buttons">
+                <button id="btn-encrypt" class="btn btn-primary" type="button">Criptografar</button>
+                <button id="btn-decrypt" class="btn" type="button">Descriptografar</button>
+            </div>
+        </form>
+        <div class="result-container">
+            <div class="no-result">
+                <img class="no-result__image" src="assets/images/no-result.svg" alt="human with blue shirt looking for a diamond">
+                <h2 class="no-result__title">Nenhuma mensagem encontrada</h2>
+                <p class="no-result__text">Digite um texto que você deseja criptografar ou descriptografar</p>
+            </div>
+            <div class="result">
+                <p class="result__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias beatae expedita fuga nisi labore voluptatem quibusdam repellat odit culpa rerum temporibus exercitationem, reiciendis debitis adipisci! Id repellendus sed accusantium aperiam.</p>
+                <button class="btn">Copiar</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts/main.js" type="module"></script>
+</body>
+</html>

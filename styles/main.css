@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --gray-100: #ced4da;
+    --gray-200: #adb5bd;
+    --gray-300: #868e96;
+    --gray-400: #495057;
+    --gray-500: #343A40;
+
+    --dark-blue-100: #609ED4;
+    --dark-blue-200: #356EA9;
+    --dark-blue-300: #0A3871;
+    --dark-blue-400: #072B61;
+    --dark-blue-500: #052051;
+
+    --light-blue-100: #F3F5FC;
+    --light-blue-200: #EFF1FA;
+    --light-blue-300: #E9ECF8;
+    --light-blue-400: #AAB2D5;
+    --light-blue-500: #757FB2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    min-height: 100vh;
+    background-color: var(--light-blue-100);
+    padding: 2.5rem;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 80px;
+    height: 100%;
+    width: 100%;
+    max-width: 1440px;    
+    margin: 0 auto;
+}
+
+.btn {
+    color: var(--dark-blue-300);
+    border: 1px solid  var(--dark-blue-300);
+    background-color: transparent;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    transition: .25s all;
+    cursor: pointer;
+}
+
+.btn.btn-primary {
+    color: var(--light-blue-100);
+    background-color: var(--dark-blue-300);
+}
+
+.btn:hover {
+    background-color: var(--light-blue-200);
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--dark-blue-400)
+}
+
+
+/* FORM START */
+
+.form {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    max-width: 680px;
+    padding: 2rem 0;
+    padding-top: 80px;
+
+}
+
+.form .textarea {
+    flex: 1;
+    color: var(--dark-blue-300);
+    font-size: 2rem;
+    background-color: transparent;
+    resize: none;
+}
+
+.form .textarea::placeholder {
+    color: var(--dark-blue-300);
+}
+
+.form .label {
+    font-size: .75rem;
+    color: var(--gray-400);
+}
+
+.form .form__buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form .form__buttons .btn {
+    flex: 1;
+}
+
+/* FORM END*/
+
+
+/* RESULT START */
+
+.result-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 5px 5px 15px #0002;
+}
+
+.result-container .no-result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+    height: 100%;
+    
+}
+
+
+.result-container .no-result.inative {
+    display: none;
+}
+
+.result-container .no-result .no-result__image {
+    width: 100%;
+}
+
+.result-container .no-result .no-result__title {
+    color: var(--gray-500);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.result-container .no-result .no-result__text {
+    text-align: center;
+}
+
+.result-container .result {
+    display: none;
+}
+
+.result-container .result.active {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+}
+
+.result-container .result .result__text {
+    flex: 1;
+    font-size: 1.5rem;
+    color: var(--gray-400);
+    word-break: break-all;
+}
+
+/* RESULT END */
+
+@media (max-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    .container {
+        display: block;
+        flex-direction: column;
+        justify-content: stretch;
+        min-height: 100vh;
+        gap: 1rem;
+       
+    }
+
+    /* FORM START */
+
+    .form {
+        min-height: 75%;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+
+
+
+    /* FORM END */
+
+    /* RESULT START */
+
+    .result-container {
+        width: 100%;
+        max-width: initial;
+        background-color: white;
+        border-radius: 2rem;
+    }
+
+    .result-container .no-result{
+        gap: 1rem;
+        
+    }
+
+    .result-container .no-result .no-result__image {
+        display: none;
+    }
+
+    /* RESULT END */
+}
+
+@media (max-width: 375px) {
+    .form .form__buttons {
+        flex-direction: column;
+    }
+}
