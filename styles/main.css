@@ -34,17 +34,26 @@ body {
     height: 100vh;
     min-height: 100vh;
     background-color: var(--light-blue-100);
-    padding: 2.5rem;
+    padding: 0 2.5rem;
+    padding-top: 0;
+}
+
+.header {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    max-width: 940px;
+    margin: 0 auto;
 }
 
 .container {
-    display: flex;
-    justify-content: flex-end;
-    gap: 80px;
-    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;    height: calc(100% - 5rem);
     width: 100%;
-    max-width: 1440px;    
+    max-width: 940px;    
     margin: 0 auto;
+    padding-bottom: 1.5rem;
 }
 
 .btn {
@@ -190,6 +199,7 @@ body {
         justify-content: stretch;
         min-height: 100vh;
         gap: 1rem;
+        margin-top: 1.5rem;
        
     }
 
