@@ -59,15 +59,12 @@ body.dark {
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: var(--dark-blue-300);
+    background-color: var(--dark-blue-400);
   }
   
   ::-webkit-scrollbar-track {
-   
-  }
-  
-  ::-webkit-scrollbar-track:hover {
     background-color: rgba(0,0,0,0.1);
+   
   }
 
 
