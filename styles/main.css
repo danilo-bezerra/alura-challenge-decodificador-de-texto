@@ -292,9 +292,13 @@ body.dark {
 .footer {
     display: flex;
     align-items: center;
+    justify-content: 
+    center;
+    flex-direction: column;
     height: 5rem;
     background-color: var(--dark-blue-300);
     box-shadow: -5px 5px 35px  #000a;
+    padding: 0 1rem;
 }
 
 
