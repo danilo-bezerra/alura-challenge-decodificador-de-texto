@@ -34,7 +34,7 @@ function showNoResultContainer() {
 
 function setResult(result) {
     const resultTag = document.querySelector(".result__text")
-    resultTag.innerText = encrypt(result)
+    resultTag.innerText = result
 }
 
 function setTextInputValue(result) {
@@ -45,29 +45,44 @@ function copyToClipboard(text) {
     navigator.clipboard.writeText(text)
 }
 
-function copyCriptedTextToClipboard() {
+function copyTextToClipboard() {
     copyToClipboard(getResultCryptedText())
 }
 
-
-textInput.addEventListener('input', () => {
-   
-})
-
-btnEncrypt.addEventListener('click', () => {
+function onEncrypt() {
     if (textInput.value.trim()) {
+        const encrypted = encrypt(textInput.value)
+
         hideNoResultContainer()
         showResultContainer()
-        setResult(textInput.value)
+        setResult(encrypted)
         setTextInputValue("")
 
-        document.getElementById("result-container").scrollIntoView()
+       
+    } else {
+        showNoResultContainer()
+        hideResultContainer()
     }
-})
+}
 
-btnDecrypt.addEventListener('click', () => {
-    const decrypted = decrypt(getResultCryptedText())
-    setTextInputValue(decrypted)
-})
+function onDecrypt() {
+    if (textInput.value.trim()) {
+        const decrypted = decrypt(textInput.value)
 
-btnCopy.addEventListener('click', copyCriptedTextToClipboard)
+        hideNoResultContainer()
+        showResultContainer()
+        setResult(decrypted)
+        setTextInputValue("")
+
+        
+    } else {
+        showNoResultContainer()
+        hideResultContainer()
+    }
+}
+
+btnEncrypt.addEventListener('click', onEncrypt)
+
+btnDecrypt.addEventListener('click', onDecrypt)
+
+btnCopy.addEventListener('click', copyTextToClipboard)
