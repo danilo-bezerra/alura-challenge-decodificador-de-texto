@@ -11,7 +11,7 @@ const textInput = document.querySelector(".textarea")
 const resultContainer = document.querySelector('.result')
 const noResultContainer = document.querySelector('.no-result')
 
-function getResultCryptedText() {
+function getResultText() {
     const resultTag = document.querySelector(".result__text")
     return resultTag.innerText
 }
@@ -46,19 +46,16 @@ function copyToClipboard(text) {
 }
 
 function copyTextToClipboard() {
-    copyToClipboard(getResultCryptedText())
+    copyToClipboard(getResultText())
 }
 
 function onEncrypt() {
     if (textInput.value.trim()) {
         const encrypted = encrypt(textInput.value)
-
         hideNoResultContainer()
         showResultContainer()
         setResult(encrypted)
-        setTextInputValue("")
-
-       
+        setTextInputValue("")       
     } else {
         showNoResultContainer()
         hideResultContainer()
@@ -68,13 +65,10 @@ function onEncrypt() {
 function onDecrypt() {
     if (textInput.value.trim()) {
         const decrypted = decrypt(textInput.value)
-
         hideNoResultContainer()
         showResultContainer()
         setResult(decrypted)
-        setTextInputValue("")
-
-        
+        setTextInputValue("")        
     } else {
         showNoResultContainer()
         hideResultContainer()
