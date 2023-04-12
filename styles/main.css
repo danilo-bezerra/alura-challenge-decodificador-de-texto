@@ -262,6 +262,9 @@ body.dark {
     max-height: 100%;
     overflow-y: scroll;
     background-color: transparent;
+    word-wrap: break-word;
+
+
 }
 
 .result-container .result .result__text::-webkit-scrollbar-track {
@@ -391,6 +394,7 @@ body.dark {
     .result-container .no-result .no-result__text {
         font-size: .9rem;
     }
+
 
     /* RESULT END */
 }

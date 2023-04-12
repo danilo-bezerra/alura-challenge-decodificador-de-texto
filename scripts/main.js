@@ -13,7 +13,7 @@ const noResultContainer = document.querySelector(".no-result");
 
 function getResultText() {
   const resultTag = document.querySelector(".result__text");
-  return resultTag.value;
+  return resultTag.innerText;
 }
 
 function hideResultContainer() {
@@ -38,7 +38,7 @@ function setResult(result) {
 }
 
 function setTextInputValue(result) {
-  textInput.value = result;
+  textInput.innerText = result;
 }
 
 function copyToClipboard(text) {
