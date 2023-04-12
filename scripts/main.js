@@ -51,7 +51,7 @@ function copyTextToClipboard() {
 
 function onEncrypt() {
   if (textInput.value.trim()) {
-    const encrypted = encrypt(textInput.value);
+    const encrypted = encrypt(normalizeString(textInput.value));
     hideNoResultContainer();
     showResultContainer();
     setResult(encrypted);
@@ -62,9 +62,15 @@ function onEncrypt() {
   }
 }
 
+function normalizeString(str) {
+  return str.normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 function onDecrypt() {
   if (textInput.value.trim()) {
-    const decrypted = decrypt(textInput.value);
+    const decrypted = decrypt(normalizeString(textInput.value));
     hideNoResultContainer();
     showResultContainer();
     setResult(decrypted);
