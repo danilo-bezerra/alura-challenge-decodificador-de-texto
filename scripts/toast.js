@@ -1,10 +1,12 @@
 const toast = document.querySelector(".toast");
 
+let toastTimeOut
+
 export function showToast(msg) {
   toast.innerText = `${msg}`;
   toast.classList.add("active");
-
-  setTimeout(hideToast, 2500);
+  clearTimeout(toastTimeOut);
+  toastTimeOut = setTimeout(hideToast, 2500);
 }
 
 export function hideToast() {
