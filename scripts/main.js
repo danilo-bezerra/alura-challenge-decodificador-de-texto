@@ -38,7 +38,7 @@ function setResult(result) {
 }
 
 function setTextInputValue(result) {
-  textInput.innerText = result;
+  textInput.value = result;
 }
 
 function copyToClipboard(text) {
@@ -63,7 +63,8 @@ function onEncrypt() {
 }
 
 function normalizeString(str) {
-  return str.normalize("NFD")
+  return str
+    .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 }
