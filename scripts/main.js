@@ -1,5 +1,6 @@
 import { decrypt } from "./decrypt.js";
 import { encrypt } from "./encrypt.js";
+import { hideToast, showToast } from "./toast.js";
 import "./toggle-theme.js";
 
 const btnEncrypt = document.querySelector("#btn-encrypt");
@@ -47,6 +48,8 @@ function copyToClipboard(text) {
 
 function copyTextToClipboard() {
   copyToClipboard(getResultText());
+
+  showToast("Texto copiado");
 }
 
 function onEncrypt() {
@@ -56,6 +59,8 @@ function onEncrypt() {
     showResultContainer();
     setResult(encrypted);
     setTextInputValue("");
+
+    showToast("Texto criptografado");
   } else {
     showNoResultContainer();
     hideResultContainer();
@@ -76,6 +81,8 @@ function onDecrypt() {
     showResultContainer();
     setResult(decrypted);
     setTextInputValue("");
+
+    showToast("Texto descriptografado");
   } else {
     showNoResultContainer();
     hideResultContainer();

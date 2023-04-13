@@ -1,0 +1,22 @@
+.toast {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    font-size: .9rem;
+    color: #fff;
+    box-shadow: 5px 5px 15px #0005;
+    transform: translateX(150%);
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: 1s transform;
+}
+
+.toast.active {
+    transform: translateX(0%);
+}
+
+.toast.success {
+    background-color: #4BB543;
+}
