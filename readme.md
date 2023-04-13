@@ -24,7 +24,7 @@ A página tem um campo para inserção do texto a ser criptografado ou descripto
 
 O resultado da criptografia ou descriptografia é exibido na tela.
 
-Um botão que permite que o usuário copie o texto criptografado/descriptografado para a área de transferência, podendo colar o resultado em outro local.
+Há botão que permite que o usuário copie o texto criptografado/descriptografado para a área de transferência, podendo colar o resultado em outro local.
 
 ## Como Usar
 Para utilizar o descodificador de texto, basta seguir os seguintes passos:
