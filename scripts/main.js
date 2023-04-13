@@ -46,9 +46,9 @@ function copyToClipboard(text) {
   navigator.clipboard.writeText(text);
 }
 
-function copyTextToClipboard() {
+function onCopy() {
   copyToClipboard(getResultText());
-
+  textInput.focus();
   showToast("Texto copiado");
 }
 
@@ -61,6 +61,7 @@ function onEncrypt() {
     setTextInputValue("");
 
     showToast("Texto criptografado");
+    textInput.focus();
   } else {
     showNoResultContainer();
     hideResultContainer();
@@ -83,6 +84,8 @@ function onDecrypt() {
     setTextInputValue("");
 
     showToast("Texto descriptografado");
+
+    textInput.focus();
   } else {
     showNoResultContainer();
     hideResultContainer();
@@ -93,4 +96,4 @@ btnEncrypt.addEventListener("click", onEncrypt);
 
 btnDecrypt.addEventListener("click", onDecrypt);
 
-btnCopy.addEventListener("click", copyTextToClipboard);
+btnCopy.addEventListener("click", onCopy);

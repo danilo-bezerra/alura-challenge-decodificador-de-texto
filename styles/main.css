@@ -41,7 +41,6 @@ body {
     background-color: var(--light-blue-100);
     padding: 0;
     padding-top: 0;
-
 }
 
 body.dark {
@@ -96,6 +95,7 @@ body.dark {
     max-width: 1440px;
     margin: 0 auto;
     padding: 1.5rem 0;
+
 }
 
 .btn {
