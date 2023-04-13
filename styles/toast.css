@@ -1,20 +1,25 @@
 .toast {
     position: absolute;
     top: 1rem;
+    left: 1rem;
     right: 1rem;
     padding: 1rem 2rem;
     border-radius: .5rem;
     font-size: .9rem;
     color: #fff;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 5px 5px 15px #0005;
-    transform: translateX(150%);
+    transform: translateY(-150%);
     text-transform: capitalize;
     font-weight: 500;
     transition: 1s transform;
+    text-align: center;
 }
 
 .toast.active {
-    transform: translateX(0%);
+    transform: translateY(0%);
 }
 
 .toast.success {
