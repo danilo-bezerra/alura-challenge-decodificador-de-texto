@@ -12,6 +12,10 @@ const textInput = document.querySelector(".textarea");
 const resultContainer = document.querySelector(".result");
 const noResultContainer = document.querySelector(".no-result");
 
+textInput.addEventListener("input", (e) => {
+  textInput.value = normalizeString(e.target.value);
+});
+
 function getResultText() {
   const resultTag = document.querySelector(".result__text");
   return resultTag.innerText;
