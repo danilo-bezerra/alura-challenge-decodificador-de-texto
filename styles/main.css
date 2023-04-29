@@ -33,6 +33,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     scroll-behavior: smooth;
+    transition: .25s background-color;
 }
 
 body {
@@ -45,6 +46,8 @@ body {
 
 body.dark {
     background-color: var(--gray-600);
+    background: var(--dark-blue-600);
+    background: linear-gradient(311deg, var(--dark-blue-600) 10%, rgba(2, 10, 19, 1) 50%, var(--dark-blue-600) 90%);
 }
 
 ::-webkit-scrollbar {
@@ -71,6 +74,10 @@ body.dark {
     padding: 0 2rem;
     background-color: var(--dark-blue-300);
     box-shadow: 5px 5px 35px #000a;
+}
+
+.dark .header {
+    background-color: var(--dark-blue-400);
 }
 
 .header-content {
@@ -280,7 +287,7 @@ body.dark {
 }
 
 .dark .result-container {
-    background-color: var(--gray-500);
+    background: var(--gray-600);
 }
 
 .dark .result-container .no-result .no-result__title {
@@ -307,7 +314,9 @@ body.dark {
     padding: 0 1rem;
 }
 
-
+.dark .footer {
+    background-color: var(--dark-blue-400);
+}
 
 .footer .footer__text {
     font-size: .8rem;
